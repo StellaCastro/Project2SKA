@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F51B5"
+
+    tools:context="com.example.android.minnorleaguesscorekeeper.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/score_keeper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/w0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/h10"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/h0"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="@dimen/w0"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@string/prettyFont"
+                        android:gravity="center"
+                        android:text="@string/mets"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/ts30"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="@dimen/w60"
+                        android:layout_height="@dimen/h60"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="@dimen/margin12"
+                        android:src="@drawable/mets" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/under_mets_run"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="@dimen/w0"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/margin16"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/runs"
+                        android:textColor="@color/white2"
+                        android:textSize="@dimen/ts18" />
+
+                    <TextView
+                        android:id="@+id/score_mets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="@dimen/margin35"
+                        android:text="@string/score"
+                        android:textColor="@color/white2"
+                        android:textSize="@dimen/ts30"
+                        android:freezesText="true"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/h10"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin8">
+
+                    <Button
+                        android:layout_width="@dimen/w0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin8"
+                        android:layout_marginRight="@dimen/margin8"
+                        android:layout_weight="2"
+                        android:background="@color/orange"
+                        android:onClick="addStrikesForMets"
+                        android:text="@string/strikes" />
+
+                    <TextView
+                        android:id="@+id/strike_Mets"
+                        android:layout_width="@dimen/w0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin16"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/strikesOutsScore"
+                        android:textColor="@color/white2"
+                        android:textSize="@dimen/ts20"
+                        android:freezesText="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin8">
+
+                    <Button
+                        android:layout_width="@dimen/w0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin8"
+                        android:layout_marginRight="@dimen/margin8"
+                        android:layout_weight="2"
+                        android:background="@color/orange"
+                        android:onClick="addOutForMets"
+                        android:text="@string/outs" />
+
+                    <TextView
+                        android:id="@+id/outs_Mets"
+                        android:layout_width="@dimen/w0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin16"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/strikesOutsScore"
+                        android:textColor="@color/white2"
+                        android:textSize="@dimen/ts20"
+                        android:freezesText="true"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin8"
+                    android:layout_marginRight="@dimen/margin8"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:background="@color/orange"
+                    android:onClick="addOneForMets"
+                    android:text="@string/run" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin8"
+                    android:background="@color/orange"
+                    android:onClick="HomeRunForMets"
+                    android:text="@string/home_run" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/guest"
+                        android:textColor="@color/GuestColor"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="12dp"
+                        android:paddingTop="4dp"
+                        android:src="@drawable/minor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="12dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/runs"
+                        android:textColor="@color/white2"
+                        android:textSize="18sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/guest_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="35dp"
+                        android:text="@string/score"
+                        android:textColor="@color/white2"
+                        android:textSize="30sp"
+                        android:freezesText="true"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="2"
+                        android:background="@color/orange"
+                        android:onClick="addStrikesForGuest"
+                        android:text="@string/strikes" />
+
+                    <TextView
+                        android:id="@+id/strike_Guest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/strikesOutsScore"
+                        android:textColor="@color/white2"
+                        android:textSize="20sp"
+                        android:freezesText="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="2"
+                        android:background="@color/orange"
+                        android:onClick="addOutForGuest"
+                        android:text="@string/outs" />
+
+                    <TextView
+                        android:id="@+id/outs_Guest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/strikesOutsScore"
+                        android:textColor="@color/white2"
+                        android:textSize="20sp"
+                        android:freezesText="true"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/orange"
+                    android:onClick="addOneForGuest"
+                    android:text="@string/run"
+
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/orange"
+                    android:onClick="HomeRunForGuest"
+                    android:text="@string/home_run"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/score_keeper"
+            android:gravity="fill"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h16"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/botton_messege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin16"
+                android:layout_marginTop="@dimen/margin16"
+                android:gravity="center"
+                android:text="@string/lets_go"
+                android:textColor="@color/white2"
+                android:textSize="@dimen/ts40"
+                android:freezesText="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h16"
+                android:layout_above="@id/reset"
+                android:background="@color/black" />
+
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin12"
+                android:layout_marginTop="@dimen/margin12"
+                android:background="@color/orange"
+                android:onClick="reset"
+                android:text="@string/reset" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

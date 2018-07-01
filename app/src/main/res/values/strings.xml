@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Minnor Leagues Score Keeper</string>
+    <string name="mets">Mets</string>
+    <string name="prettyFont">cursive</string>
+    <string name="runs">Runs</string>
+    <string name="score">0</string>
+    <string name="strikes">strikes</string>
+    <string name="strikesOutsScore">0</string>
+    <string name="outs">outs</string>
+    <string name="run">run</string>
+    <string name="home_run">Home Run</string>
+    <string name="guest">Guest</string>
+    <string name="lets_go">Lets Go!</string>
+    <string name="reset">reset</string>
+    <string name="game_on">Game On!</string>
+    <string name="H_R_M">Home Run for Mets!</string>
+    <string name="out">You\'re Out!</string>
+    <string name="Teams_switch">Switch Teams!</string>
+    <string name="H_R_G">Home Run for Guest!</string>
+
+</resources>
